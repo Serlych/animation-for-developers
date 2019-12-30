@@ -1,0 +1,691 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Animation 4 Programmers</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/animations.css">
+		
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+		
+		<script src="node_modules/interactjs/dist/interact.min.js"></script>
+		<script src="node_modules/dragdrop-js/dist/dragdrop.js"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="slide-1">
+					<h2>Animation for Developers</h2>
+					<p>(who may or may not be scared and/or intimidated by CSS or animation in general)</p>
+					<p>
+						<span>Made with lots of ❤️ for my fellow iTexicans by Joel Chavoya<br/>Fullstack Javascript Developer</span>
+						<img src="https://www.itexico.com/hs-fs/hubfs/Logos/iTexico/ITX_logo_innovation.png?width=1076&name=ITX_logo_innovation.png">
+					</p>
+				</section>
+				<section class="slide-2">
+					<p>Which one looks better?</p>
+					<div class="animated-el s2-one">1</div>
+					<div class="animated-el s2-two">2</div>
+				</section>
+				<section class="slide-3">
+					<section>
+						<img src="https://i.kym-cdn.com/entries/icons/original/000/022/978/yNlQWRM.jpg">
+					</section>
+				</section>
+				<section class="slide-4">
+					<div class="two-column">
+						<div>
+							Animation is a skill that anyone can learn!
+							<br/>
+							<br/>
+							Even backend developers!
+						</div>
+						<img src="https://i.imgflip.com/2t8v3o.jpg">
+					</div>
+				</section>
+				<section class="slide-5">
+					<u>But let's be real, most of you won't.</u>
+					<br/><br/>
+					Luckily, there's an animator between your ranks!
+				</section>
+				<section class="slide-6">
+					"I don't want to learn animation, I'd rather have":
+					<br/><br/>
+					<ul>
+						<li>Rules of thumb</li>
+						<li>Code snippets</li>
+						<li>Easy practical examples</li>
+						<li>An easy way to judge if something is ugly</li>
+					</ul>
+					<br/><br/>
+					No worries, I got you all covered!
+				</section>
+				<section class="slide-6.5">
+					<b>Why is animation something programmers should care about?</b>
+					<br/><br/>
+					<ul>
+						<li>Appealing</li>
+						<li><u>User engagement</u></li>
+						<li>Draws attention</li>
+						<li>Makes stuff relatable</li>
+						<li>Modern</li>
+					</ul>
+				</section>
+				<section class="slide-7">
+					But first let's understand why animation may or may not look good.
+					<br/><br/>
+					<span>🤔</span>
+				</section>
+				<section class="slide-8">
+					<div class="two-column">
+						<div>
+							Walt Disney hates this book!
+							<br/><br/>
+							<ul>
+								<li>Become an animator in just 12 days!</li>
+								<li>This will instantly make you good no matter what!</li>
+								<li>Unlock all the animation secrets!</li>
+								<li>Animate Cinderella from the ground-up in just one week!</li>
+								<li>Land a job at Pixar for just <b>1259.99 USD!</b></li>
+							</ul>
+						</div>
+						<img src="https://http2.mlstatic.com/libro-the-illusion-of-life-disney-animation-D_NQ_NP_922023-MLM31110147629_062019-F.jpg">
+					</div>
+				</section>
+				<section class="slide-9">
+					Except, well...
+					<br/>
+					<h2>Not really...</h2>
+				</section>
+				<section class="slide-10">
+					<p>The twelve principles of animation are in this book</p>
+					<img src="https://kryptonians.net/wp-content/uploads/2017/01/principlesOfAnimation.jpg">
+				</section>
+				<section>
+					Principle 1. Squash and Stretch.
+					<div class="subtitle">Gives a sense of mass and catches the eye.</div>
+					<div class="slide-11 centered">
+						<div class="animated-el s11-one"></div>
+					</div>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape data-line-numbers>
+@keyframes squash-stretch {
+  0% {
+    transform: translate(0);
+    height: 250px;
+    width: 100px;
+  }
+  
+  50% {
+    height: 100px;
+    width: 250px;
+  }
+  
+  100% {
+    transform: translate(100%);
+    height: 250px;
+    width: 100px;
+  }
+}
+					</code></pre>
+					Try to avoid:
+					<div class="slide-12 centered">
+						<div class="animated-el s12-one"></div>
+					</div>
+				</section>
+				<section>
+					Principle 2. Anticipation.
+					<div class="subtitle">Prepares animation. Communicates something needs revision.</div>
+					<div class="mini-form">
+						<input type="email" class="form-control" id="send-form" placeholder="Enter email">
+						<button class="btn btn-primary" onclick="shake()">Send form</button>
+					</div>
+					<button class="anticipation-button with-ant">With Anticipation</button>
+					<button class="anticipation-button no-ant">Without Anticipation</button>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape data-line-numbers>
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+   10%, 90% {
+     transform: translate3d(-1px, 0, 0);
+   }
+  
+   20%, 80% {
+     transform: translate3d(2px, 0, 0);
+   }
+  
+   30%, 50%, 70% {
+     transform: translate3d(-4px, 0, 0);
+   }
+  
+   40%, 60% {
+     transform: translate3d(4px, 0, 0);
+   }
+ }
+	
+// Anticipation Bezier curve timing function
+transition: all 0.5s cubic-bezier(.55,-0.6,.9,.3);
+					</code></pre>
+					<div class="two-column slide-anticipation">
+						<div>
+							<p>Try to avoid overdoing it.</p>
+							<button class="anticipation-button overdone-ant">Overdone</button>
+						</div>
+						<div>
+							<p>It works because of this curve.</p>
+							<img src="img/anticipation-bc.png">
+						</div>
+					</div>
+				</section>
+				<section class="slide-staging">
+					<div class="dark-div" id="dark-div"></div>
+					<div class="modal" id="modal">
+						<div>
+							<span class="h2">This is an important modal!</span>
+							<p>Now that I have your attention, let's talk about the crab's inmortality...</p>
+						</div>
+						<button class="btn btn-success" onclick="unofuscate()">Okay!</button>
+					</div>
+					<div id="content-blur">
+						<span class="stating-title">Principle 3. Staging.</span>
+						<div class="subtitle">Focus on something. Composition.</div>
+						<p onclick="ofuscate()">I am writing something. Yes, I plan to make it the most boring thing ever written. I go to the store. A car
+							is parked. Many cars are parked or moving. Some are blue. Some are tan. They have windows. In the store,
+							there are items for sale. These include such things as soap, detergent, magazines, and lettuce. You can
+							enhance your life with these products. Soap can be used for bathing, be it in a bathtub or in a shower.
+							Apply the soap to your body and rinse. Detergent is used to wash clothes. Place your dirty clothes into a
+							washing machine and add some detergent as directed on the box. Select the appropriate settings on your
+							washing machine and you should be ready to begin. Magazines are stapled reading material made with glossy
+							paper, and they cover a wide variety of topics, ranging from news and politics to business and stock market
+							information. Some magazines are concerned with more recreational topics, like sports card collecting or
+							different kinds of hairstyles. Lettuce is a vegetable. It is usually green and leafy, and is the main
+							ingredient of salads. You may have an appliance at home that can quickly shred lettuce for use in salads.
+							Lettuce is also used as an optional item for hamburgers and deli sandwiches. Some people even eat lettuce by
+							itself. I have not done this. So you can purchase many types of things at stores.</p>
+					</div>
+				</section>
+				<section class="slide-saptp">
+					Principle 4. Straight Ahead & Pose to Pose.
+					<div class="subtitle">Animation in the browser can be done in:</div>
+					<ul>
+						<li>Transitions - Straight Ahead</li>
+						<li>Keyframes - Pose to Pose</li>
+					</ul>
+				</section>
+				<section class="slide-saptp-ex">
+						<pre><code data-trim data-noescape data-line-numbers>
+// This is an example for Straight Ahead animation.
+// Here, the browser decides the interpolation between two states.
+
+transition: height width 0.5s linear;
+						</code></pre>
+						<pre><code data-trim data-noescape data-line-numbers>
+// Here, there is an example for Pose to Pose animation.
+// The animator/developer will decide the interpolation (poses) from animation start to end.
+@keyframes grow {
+	10% {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(0.3, 0.3);
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+						</code></pre>
+					<div class="two-column">
+						<img src="img/linear.png">
+						<img src="img/ptp.png">
+					</div>
+				</section>
+				<section class="slide-ftoa">
+					Principle 5. Follow Through & Overlapping Action.
+					<div class="subtitle">Show that an action has stopped. Understand a transition of states.</div>
+					<div id="drag-1" class="draggable">
+						<p> Drag me! </p>
+					</div>
+					<img src="img/d-and-d.gif">
+				</section>
+				<section>
+					Try to overshoot using cubic bezier function.
+					<pre><code data-trim data-noescape data-line-numbers>
+// Here is an example of how overshooting is done using cubic-bezier
+transition: all 1s cubic-bezier(0.55, 0.01, 0.4, 1.50);
+					</code></pre>
+					<div class="two-column">
+						<img src="img/overshoot.png">
+						<img src="img/ftoa.gif">
+					</div>
+				</section>
+				<section>
+					Principle 6. Slow In & Slow Out.
+					<div class="subtitle">Nothing but robots move linearly. Naturalise. Appeal.</div>
+					<div class="slow-in-out">
+						<div class="animated-el s13-el" id="s13-one" onclick="stopStartAnimation(1)">Linear</div>
+						<div class="animated-el s13-el" id="s13-two" onclick="stopStartAnimation(2)">Ease-in-out</div>
+					</div>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape data-line-numbers>
+// Always always always always always always avoid
+transition: all 1s linear;
+
+// A good rule of thumb would be to always ease the movement or use a cubic bezier function if you feel fancy
+transition: all 1s ease-in-out;
+transition: all 1s cubic-bezier(0.5, 0.1, 1, 0.20);
+					</code></pre>
+					<p>Avoid linear at all costs if you don't want your graphic to look like an old Powerpoint.</p>
+				</section>
+				<section>
+					Principle 7. Arcs.
+					<div class="subtitle">Try to avoid straight lines. Real life motion is never done in such fashion.</div>
+					<div class="slide-arcs">
+						<div class="loader"></div>
+					</div>
+					<div class="dot"></div>
+				</section>
+				<section>
+					Principle 8. Secondary Action.
+					<div class="subtitle">Emphasize. Augment the center of attention without becoming the main action.</div>
+					<div class="spinner">
+						<div class="rect1"></div>
+						<div class="rect2"></div>
+						<div class="rect3"></div>
+						<div class="rect4"></div>
+						<div class="rect5"></div>
+					</div>
+					<div class="d-d">
+						<div class="dragdrop-target">
+							<div class="animated-el dragdrop">1</div>
+						</div>
+						<div class="dragdrop-target">
+							<div class="animated-el dragdrop">2</div>
+						</div>
+						<div class="dragdrop-target">
+							<div class="animated-el dragdrop">3</div>
+						</div>
+						<div class="dragdrop-target">
+							<div class="animated-el dragdrop">4</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					You can also use pseudo-elements.
+					<img style="margin-top: 3rem" src="img/sec.gif">
+				</section>
+				<section>
+					Principle 9. Timing.
+					<div class="subtitle">Motion is proportional to object mass. More frames = action is slower. Snappy.</div>
+					<button id="trigger" class="btn-success btn">Menu</button>
+					<div class="two-column">
+						<div id="menu-left" class="menu">
+							<a href="#">Piggy   🐷</a>
+							<a href="#">Doggo   🐶</a>
+							<a href="#">Hamb   😺</a>
+						</div>
+						<div id="menu-right" class="menu">
+							Notification
+						</div>
+					</div>
+				</section>
+				<section class="slide-timing">
+					UI actions are usually fast.
+					<div class="subtitle">Remember to ease the movements.</div>
+					<div class="subtitle">Slow UI animations give the impression of a sluggish system.</div>
+					<div class="subtitle">Fast information animations confuse the user.</div>
+					<div class="timing-img">
+						<img src="img/egg.gif">
+					</div>
+				</section>
+				<section>
+					<div>
+					<pre><code data-trim data-noescape data-line-numbers>
+// Good for UI
+// Don't go for more than 300 ms for UI elements, as a good rule of thumb.
+transition: all 0.3s ease-out;
+
+// Bezier curves are actually really good
+transition: all 0.3s cubic-bezier(x, x, x, x);
+						</code></pre>
+					</div>
+					<img src="img/graphs.gif">
+				</section>
+				<section class="slide-exgg">
+					Principle 10. Exaggeration.
+					<div class="subtitle">Relatable. Too realistic is unappealing. Draw attention.</div>
+					<img src="img/s.gif" style="mix-blend-mode: overlay">
+					<button id="btn-suc" class="btn-success btn" onclick="buyNow()">Buy now!</button>
+				</section>
+				<section>
+					<pre><code data-trim data-noescape data-line-numbers>
+// Exaggerate scale or color for special emphasis
+// Remember to use ease principle!
+// A good rule of thumb would be to overscale or underscale elements :)
+@keyframes exaggeration {
+  0% {
+    transform: scale(1,1);
+  }
+  
+  30% {
+    transform: scale(1.3, 1.3);
+  }
+  
+  100% {
+    transform: scale(1, 1);
+  }
+}
+						</code></pre>
+					<img src="img/donald.gif">
+				</section>
+				<section>
+					Principle 11. Solid Drawing.
+					<div class="subtitle">Understand in and out of animations. Add depth.</div>
+					<div  class="header-cont">
+						<div class="header">I am a header</div>
+						<div>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+							ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+							fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+							mollit anim id est laborum."</div>
+					</div>
+					<div class="two-column solid-d">
+						<img src="img/solid-d.gif">
+						<img src="img/swipe.gif">
+					</div>
+				</section>
+				<section>
+					<div class="two-column">
+						<div class="perspective-text">
+							<div class="perspective-line">
+								<p></p>
+								<p>Use</p>
+							</div>
+							<div class="perspective-line">
+								<p>Use</p>
+								<p>Perspective</p>
+							</div>
+							<div class="perspective-line">
+								<p>Perspective</p>
+								<p>In your</p>
+							</div>
+							<div class="perspective-line">
+								<p>In your</p>
+								<p>Layouts</p>
+							</div>
+							<div class="perspective-line">
+								<p>Layouts</p>
+								<p></p>
+							</div>
+						</div>
+						<img class="splitmen" src="img/splitmen.gif">
+					</div>
+					<div class="flex">Just flexing CSS lol</div>
+				</section>
+				<section>
+					Depth can be achieved using simple CSS properties.
+					<pre><code data-trim data-noescape data-line-numbers>
+// Use transform!
+transform: translate3d();
+transform: scaleZ(); // This one can get Z value!
+transform: perspective();
+transform: skew();
+					</code></pre>
+					<div class="card-demo">
+						<div class="scene">
+							<div class="card">
+								<div class="face front">front</div>
+								<div class="face back">back</div>
+							</div>
+						</div>
+						<pre><code data-trim data-noescape data-line-numbers>
+.card {
+  width:100%;
+  height:100%;
+  position:relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+					</code></pre>
+					</div>
+				</section>
+				<section class="slide-appeal">
+					Principle 12. Appeal.
+					<div class="subtitle">The father of them all. Charisma. Flourish.</div>
+					<iframe src="https://tympanus.net/Development/ExpandingGridItemAnimation/"></iframe>
+				</section>
+				<section>
+					Appeal can be subjective.
+					<div class="subtitle">Use common sense.<br/>If it doesn't look right for you, it won't look good for the user either.</div>
+					<div class="two-column botons">
+						<div class="text-box">
+							<a href="#" class="btn btn-white btn-animate">owo</a>
+						</div>
+						<div class="box-3">
+							<div class="btn btn-three">
+								<span>square</span>
+							</div>
+						</div>
+						<button class="glow-on-hover" type="button">rainbow</button>
+						<div class="buttons">
+							<button class="blob-btn">
+								blob
+								<span class="blob-btn__inner">
+									<span class="blob-btn__blobs">
+										<span class="blob-btn__blob"></span>
+										<span class="blob-btn__blob"></span>
+										<span class="blob-btn__blob"></span>
+										<span class="blob-btn__blob"></span>
+									</span>
+								</span>
+							</button>
+							<br/>
+							<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+								<defs>
+									<filter id="goo">
+										<feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10"></feGaussianBlur>
+										<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 21 -7" result="goo"></feColorMatrix>
+										<feBlend in2="goo" in="SourceGraphic" result="mix"></feBlend>
+									</filter>
+								</defs>
+							</svg>
+						</div>
+					</div>
+				</section>
+				<section>
+					And remember children:
+					<h4>Principles are sacred, but they are not always law!</h4>
+					<div class="subtitle">You do what's best for your ❤️ :)</div>
+				</section>
+				<section>
+					<h3>Do's and dont's</h3>
+					<div class="two-column">
+						<ul>
+							<li>Ask a colleague</li>
+							<li>Make animations long</li>
+							<li>Keep it consistent</li>
+							<li>Subtle is usually the best way to go</li>
+							<li>Preview. Preview. Preview.</li>
+							<li>Consider different devices</li>
+							<li>EXPERIMENT A LOT!</li>
+						</ul>
+						<ul>
+							<li>Over-do animations</li>
+							<li>Saturate the layout with animations</li>
+							<li>Animate everything</li>
+							<li>Force animation (ie. motion sickness)</li>
+							<li>Forget your audience</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					QA
+					<h1>🤔</h1>
+				</section>
+				<section>
+					<h1>Thank you very much!</h1>
+					<div class="subtitle">Contact me through MS Teams or by mail at joel.chavoya@itexico.com</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				hash: true,
+				transition: 'slide',
+				backgroundTransition: 'fade',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	
+	<script>
+		function shake() {
+			document.getElementById('send-form').classList.add('shake');
+			setTimeout(() => {
+				document.getElementById('send-form').classList.remove('shake');
+			}, 2000)
+		}
+		
+		function ofuscate() {
+			setTimeout(() => {
+				document.getElementById('dark-div').style.opacity = '1';
+				const modal = document.getElementById('modal');
+				modal.style.opacity = '1';
+				modal.style.pointerEvents = 'all'
+				document.getElementById('content-blur').classList.add('slide-staging-content-blur');
+			}, 5000)
+		}
+		
+		function unofuscate() {
+			document.getElementById('dark-div').style.opacity = '0';
+			const modal = document.getElementById('modal');
+			modal.style.opacity = '0';
+			modal.style.pointerEvents = 'none'
+			document.getElementById('content-blur').classList.remove('slide-staging-content-blur');
+		}
+		
+		
+		function stopStartAnimation (number) {
+			const one = document.getElementById('s13-one');
+			const two = document.getElementById('s13-two');
+			
+			if (number === 1) {
+				if (one.classList.contains('s13-one')) {
+					one.classList.remove('s13-one');
+				} else {
+					one.classList.add('s13-one');
+				}
+			} else if (number === 2) {
+				if (two.classList.contains('s13-two')) {
+					two.classList.remove('s13-two');
+				} else {
+					two.classList.add('s13-two');
+				}
+			}
+		}
+		
+		const trigger = document.getElementById('trigger');
+		trigger.addEventListener('click', toggle);
+		
+		function toggle() {
+			const menuLeft = document.getElementById('menu-left');
+			const menuRight = document.getElementById('menu-right');
+			menuLeft.classList.toggle('menu_left--open');
+			menuRight.classList.toggle('menu_right--open');
+		}
+		
+		function buyNow() {
+			const button = document.getElementById('btn-suc');
+			button.classList.toggle('btn-suc');
+		}
+	</script>
+	
+	<script>
+		interact('.draggable')
+		.draggable({
+			inertia: true,
+			modifiers: [
+				interact.modifiers.restrictRect({
+					restriction: 'parent',
+					endOnly: true
+				})
+			],
+			autoScroll: true,
+			onmove: dragMoveListener,
+			onend: onEndMoveListener
+		})
+		
+		function dragMoveListener (event) {
+			const textEl = event.target.querySelector('p');
+			textEl && (textEl.textContent = 'I am moving :)')
+			textEl && (textEl.style.backgroundColor = '#dd5566')
+			var target = event.target
+			
+			var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+			var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+			
+			target.style.webkitTransform =
+				target.style.transform =
+					'translate(' + x + 'px, ' + y + 'px)'
+			
+			target.setAttribute('data-x', x)
+			target.setAttribute('data-y', y)
+		}
+		
+		function onEndMoveListener (event) {
+			const textEl = event.target.querySelector('p')
+			textEl && (textEl.textContent = 'I have stopped')
+			textEl && (textEl.style.backgroundColor = '#29e')
+		}
+		
+		window.dragMoveListener = dragMoveListener
+	</script>
+	
+	<script>
+		new dragdrop.start((dom, api) => {
+				dom.addEventListener('drop', (event) => {
+			})
+		});
+	</script>
+	
+	</body>
+</html>
